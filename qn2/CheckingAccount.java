@@ -29,6 +29,7 @@ public class CheckingAccount{
     }
 
     public void withdraw(double amount) throws Exception{
+        if (amount <= 0) throw new ArithmeticException("Please enter amount greater than 0");
         if (amount > this.getBalance()) {
             throw new InsufficientFundsException(amount-this.getBalance());
         }
