@@ -18,7 +18,7 @@ public class CircleWithException {
         } catch (NullPointerException e) {
             throw new NullPointerException("NullPointerError");
         }
-        if (radius < 0) {
+        if (radius <= 0) {
             throw new IllegalArgumentException("IllegalArgumentError: Only positive numbers allowed");
         }
         if (this.getArea(radius) > 1000) {
