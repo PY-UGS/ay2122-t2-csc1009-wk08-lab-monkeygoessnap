@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+
 public class CheckingAccount{
     
     private double balance;
@@ -17,7 +19,12 @@ public class CheckingAccount{
     }
 
     public void deposit(double amount) {
-        this.balance += amount;
+        if (amount <= 0) throw new ArithmeticException("Please enter amount greater than 0");
+        try {
+            this.balance += amount;
+        } catch (InputMismatchException e) {
+            throw e;
+        }
         System.out.printf("The balance after deposit is: $%.2f\n", this.getBalance());
     }
 
@@ -25,7 +32,11 @@ public class CheckingAccount{
         if (amount > this.getBalance()) {
             throw new InsufficientFundsException(amount-this.getBalance());
         }
-        this.balance -= amount;
+        try {
+            this.balance -= amount;
+        } catch (InputMismatchException e) {
+            throw e;
+        }
         System.out.printf("The balance after withdraw is: $%.2f\n", this.getBalance());
     }
 
