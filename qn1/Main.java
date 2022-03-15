@@ -8,7 +8,7 @@ public class Main{
                 circle = new CircleWithException();
                 break;
             } catch (Exception e) {
-                System.out.println(e.getMessage()+"\nRe-enter radius:");
+                System.out.println(e.getClass() + e.getMessage()+"\nRe-enter radius:");
             }
         }
 

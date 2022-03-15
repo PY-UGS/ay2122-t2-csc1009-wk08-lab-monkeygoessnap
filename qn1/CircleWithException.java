@@ -14,15 +14,15 @@ public class CircleWithException {
         try {
             radius = Double.parseDouble(sc.next());
         } catch (NumberFormatException e) {
-            throw new NumberFormatException("NumberFormatError: Strings not allowed");
+            throw new NumberFormatException(" Strings not allowed");
         } catch (NullPointerException e) {
-            throw new NullPointerException("NullPointerError");
+            throw new NullPointerException(" NullPointerError");
         }
         if (radius <= 0) {
-            throw new IllegalArgumentException("IllegalArgumentError: Only positive numbers allowed");
+            throw new IllegalArgumentException(" Enter number greater than 0");
         }
         if (this.getArea(radius) > 1000) {
-            throw new Exception("Error: Area bigger than 1000");
+            throw new Exception(" Area bigger than 1000");
         }
         this.radius = radius;
     }
